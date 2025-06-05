@@ -48,9 +48,6 @@ The biggest challenge I faced was time—I wasn’t able to implement the edit a
 
 I also realized I need to deepen my understanding of separation of concerns and Livewire best practices. To improve in these areas, I plan to study production-level codebases.
 
-One concern I had was Livewire's frequent AJAX requests on every state change, which raised questions about its scalability compared to client-side SPAs.
-That said, I really enjoyed experimenting with Blade components and Livewire—it was both a learning experience and a lot of fun!
-
 ---
 
 ** And once again thank you for this opportunity!**
