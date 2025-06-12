@@ -17,7 +17,7 @@ new class extends Component {
           ->orderBy('date', 'asc')
           ->orderBy('time', 'asc')
           ->where(function($query)  {
-            $query->where('created_by', auth()->user()->id)
+            $query->where('created_by', auth()->user()->id)->orWhere('created_to', auth()->user()->id)
                 ->orWhereHas('eventUsers', function ($subQuery) {
                     $subQuery->where('user_id', auth()->user()->id)
                         ->where('status', 1);
@@ -61,7 +61,7 @@ new class extends Component {
                 'item' => $item,
             ]);
             }
-            
+
             DB::commit();
         } catch (\Exception $e) {
             info('Error creating requisition: ' . $e->getMessage());
@@ -75,8 +75,8 @@ new class extends Component {
         $this->redirect(route('requisition.index'), navigate: true);
 
     }
-    
-    
+
+
 
 }; ?>
 

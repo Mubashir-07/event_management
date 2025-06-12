@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Event;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Event;
 
 class EventController extends Controller
 {
@@ -11,7 +11,15 @@ class EventController extends Controller
     {
         return view('event.index');
     }
-    public function create(){
+
+    public function create()
+    {
         return view('event.create');
+    }
+
+    public function edit(Event $event)
+    {
+        $data = ['event'  => $event];
+        return view('event.edit', $data);
     }
 }
